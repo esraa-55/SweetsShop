@@ -21,206 +21,236 @@ class _SignUpState extends State<SignUp> {
   TextEditingController confirmpasscontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Form(
-          key: _formKey,
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  height: 270,
-                  width: 360,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/images/signup.jpg",
-                        ),
-                        fit: BoxFit.fill,
-                      ),
-                      borderRadius: BorderRadius.circular(40)),
+    return SafeArea(
+      child:Scaffold(
+        body:
+
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/icecream.jpg"),
+                  fit: BoxFit.fill,
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: SizedBox(
-                    width: 340,
+              ),
+            
+            child:  Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                child: Center(
+                  
+                  child: Column(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(height: 70),
+                            Container(
+                      width: 130, // Adjust the size of the circle
+                      height: 130, // Adjust the size of the circle
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: AssetImage("assets/yum.jpg"), // Replace with your image path
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                         SizedBox(height:76),
+                     
+                 
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: SizedBox(
+                      width: 340,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                           filled: true,
+                              hintText: "Name",
+                              fillColor: Color(0xFFF9FFFF),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(37)
+                              ),
+                          
+                          prefixIcon: Icon(Icons.account_box_rounded),
+                        ),
+                        style: TextStyle(
+                          color:  Color.fromARGB(255, 236, 101, 169),
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                      controller: emailcontroller,
                       decoration: InputDecoration(
-                        labelText: "Name",
-                        prefixIcon: Icon(Icons.account_box_rounded),
+                        filled: true,
+                              hintText: "Email",
+                              fillColor: Color(0xFFF9FFFF),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(37)
+                              ),
+                          
+                        
+                        prefixIcon: Icon(Icons.email),
                       ),
                       style: TextStyle(
-                        color: Colors.purple,
+                        color:Color.fromARGB(255, 236, 101, 169),
                         fontSize: 15,
                       ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    controller: emailcontroller,
-                    decoration: InputDecoration(
-                      labelText: "Email",
-                      prefixIcon: Icon(Icons.email),
-                    ),
-                    style: TextStyle(
-                      color: Colors.purple,
-                      fontSize: 15,
-                    ),
-                    validator: (value) {
-                      if (value == null || value.contains("@") == false) {
-                        return "Enter Valid Email";
-                      }
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    controller: passcontroller,
-                    decoration: InputDecoration(
-                      labelText: "Password",
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: togglePassword(),
-                    ),
-                    style: TextStyle(
-                      color: Colors.purple,
-                      fontSize: 15,
-                    ),
-                    obscureText: insecurepass,
-                    obscuringCharacter: "*",
-                    validator: (value) {
-                      if (value == null || value.length <= 6) {
-                        return "Enter Valid Password";
-                      }
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      labelText: "Confirm Password",
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: togglePassword(),
-                    ),
-                    style: TextStyle(
-                      color: Colors.purple,
-                      fontSize: 15,
-                    ),
-                    obscureText: true,
-                    obscuringCharacter: "*",
-                    validator: (value) {
-                      if (value == null) {
-                        return "Enter Valid password";
-                      } else if (value != passcontroller.text) {
-                        return " password mismatch";
-                      }
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: ElevatedButton(
-                      onPressed: () async {
-                 
-                        
-
-                        if (_formKey.currentState!.validate()) { 
-                           bool result =  await register(emailcontroller.text,passcontroller.text);
-                              if(result==true){
-
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(content: Text("Successful registration")));
-
-                              Navigator.push(context,MaterialPageRoute(builder: (context){
-                                    return Login();
-                              
-                                    }));
-
-                              }
-                                 else{
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(content: Text("Error,try again"))
-                                );
-                                 }
+                      validator: (value) {
+                        if (value == null || value.contains("@") == false) {
+                          return "Enter Valid Email";
                         }
                       },
-  
-                        
-
-                         
+                    ),
+                  ),
+                    Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: SizedBox(
+                      width: 340,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                           filled: true,
+                              hintText: "Address",
+                              fillColor: Color(0xFFF9FFFF),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(37)
+                              ),
                           
-                    
-                      child: Text("Register"),
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.purple),
-                          padding: MaterialStateProperty.all(
-                              EdgeInsets.symmetric(
-                                  horizontal: 79, vertical: 10)),
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(25))))),
+                          prefixIcon: Icon(Icons.account_box_rounded),
+                        ),
+                        style: TextStyle(
+                          color:Color.fromARGB(255, 236, 101, 169),
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      controller: passcontroller,
+                      decoration: InputDecoration(
+                         filled: true,
+                              hintText: "Password",
+                              fillColor: Color(0xFFF9FFFF),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(37)
+                              ),
+                       
+                        prefixIcon: Icon(Icons.lock),
+                        suffixIcon: togglePassword(),
+                      ),
+                      style: TextStyle(
+                        color:Color.fromARGB(255, 236, 101, 169),
+                        fontSize: 15,
+                      ),
+                      obscureText: insecurepass,
+                      obscuringCharacter: "*",
+                      validator: (value) {
+                        if (value == null || value.length <= 6) {
+                          return "Enter Valid Password";
+                        }
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                         filled: true,
+                              hintText: "Confirm Password",
+                              fillColor: Color(0xFFF9FFFF),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(37)
+                              ),
+                        
+                        prefixIcon: Icon(Icons.lock),
+                        suffixIcon: togglePassword(),
+                      ),
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 236, 101, 169),
+                        fontSize: 15,
+                      ),
+                      obscureText: true,
+                      obscuringCharacter: "*",
+                      validator: (value) {
+                        if (value == null) {
+                          return "Enter Valid password";
+                        } else if (value != passcontroller.text) {
+                          return " password mismatch";
+                        }
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: ElevatedButton(
+                        onPressed: () async {
+                   
+                          
+                
+                          if (_formKey.currentState!.validate()) { 
+                             bool result =  await register(emailcontroller.text,passcontroller.text);
+                                if(result==true){
+                
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(content: Text("Successful registration")));
+                
+                                Navigator.push(context,MaterialPageRoute(builder: (context){
+                                      return Login();
+                                
+                                      }));
+                
+                                }
+                                   else{
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(content: Text("Error,try again"))
+                                  );
+                                   }
+                          }
+                        },
+                  
+                          
+                
+                           
+                            
+                      
+                        child: Text("Register"),
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Color.fromARGB(255, 236, 101, 169),),
+                            padding: MaterialStateProperty.all(
+                                EdgeInsets.symmetric(
+                                    horizontal: 79, vertical:18)),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25))))),
+                  ),
+                               
+                        
+                      
+                    ],
+                              ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: Image.asset(
-                        "assets/images/face.jpeg",
-                        width: 70,
-                        height: 40,
-                      ),
-                      padding: EdgeInsets.all(10.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2,
-                          color: Colors.white,
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    Container(
-                      child: Image.asset(
-                        "assets/images/google.jpg",
-                        width: 70,
-                        height: 40,
-                      ),
-                      padding: EdgeInsets.all(10.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2,
-                          color: Colors.white,
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    Container(
-                      child: Image.asset(
-                        "assets/images/twitter.jpg",
-                        width: 70,
-                        height: 40,
-                      ),
-                      padding: EdgeInsets.all(10.0),
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2,
-                          color: Colors.white,
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                  ],
-                )
-              ],
             ),
           ),
         ),
       ),
     );
   }
+
+    
+  
+  
+  
 
   void showsnackbar(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -262,4 +292,5 @@ class _SignUpState extends State<SignUp> {
       color: Colors.grey,
     );
   }
+
 }
