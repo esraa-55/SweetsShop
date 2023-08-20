@@ -5,8 +5,8 @@ import 'package:get/get_navigation/get_navigation.dart';
 
 import 'color_const.dart';
 
-class CustomGenralButton extends StatelessWidget {
-  const CustomGenralButton({Key? key, this.text, this.OnTap}) : super(key: key);
+class CustomGeneralButton extends StatelessWidget {
+  const CustomGeneralButton({Key? key, this.text, this.OnTap}) : super(key: key);
    final String ? text;
    final VoidCallback? OnTap ;
   @override

@@ -67,7 +67,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (context, index) {
                     return carouselView(index);
                   }),
-            )
+            ),
+            Spacer(),
+            Padding(padding:const EdgeInsets.all(8.0),
+              child:  CustomGeneralButton(
+                OnTap: (){
+
+                  if(_pageController!.page!<3){
+                    _pageController?.nextPage(duration:Duration(milliseconds: 500),
+                        curve:Curves.easeIn);
+                  }
+                  else{
+                    Get.to(()=>Home(),transition:Transition.rightToLeft ,
+                        duration: Duration(milliseconds:500 ));
+
+                  }
+                },
+                text:'Buy NOW',
+              ),),
           ],
         ),
       ),
@@ -150,21 +167,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
 
-        Padding(padding:const EdgeInsets.all(8.0),
-          child:  CustomGenralButton(
-            OnTap: (){
-              if(_pageController!.page!<3){
-                _pageController?.nextPage(duration:Duration(milliseconds: 500),
-                    curve:Curves.easeIn);
-              }
-              else{
-                Get.to(()=>Home(),transition:Transition.rightToLeft ,
-                    duration: Duration(milliseconds:500 ));
 
-              }
-            },
-            text:_pageController!.hasClients ? (_pageController?.page==3?'Buy NOW':'Next') :'Next',
-          ),)
+
 
       ],
     );

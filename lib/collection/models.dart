@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class DataModel {
-  String ?title;
-  String ?imageName;
-  //final double price;
-   String? subtitle;
+  String?title;
+  String?imageName;
+  // String? price;
+  String? subtitle;
   DataModel(
       this.title,
       this.imageName,
-      //this.price,
+      // this.price,
       this.subtitle,
       );
 
@@ -16,6 +16,7 @@ class DataModel {
   DataModel.fromJson(Map<String,dynamic>json){
     title =json["title"];
     subtitle=json["subtitle"];
+    // price=json["price"];
     imageName= json["imageName"];
 
   }
@@ -23,6 +24,7 @@ class DataModel {
     return {
      "title" :title,
      "subtitle" :subtitle,
+     // "price" :price,
      "imageName" :imageName,
     };
   }
