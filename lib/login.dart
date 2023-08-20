@@ -2,6 +2,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'collection/home_category.dart';
 import 'signup.dart';
 
 class Login extends StatefulWidget {
@@ -105,7 +106,7 @@ class _LoginState extends State<Login> {
                                 
                                
                              Navigator.push(context,MaterialPageRoute(builder: (context){
-                                    return SignUp();
+                                    return HomeScreen();
                               
                                     }));}
                                     else {

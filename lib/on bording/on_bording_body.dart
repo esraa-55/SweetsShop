@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:esraanewsweetmarket/collection/models.dart';
 import 'package:esraanewsweetmarket/core/color_const.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,8 +24,10 @@ class OnBordingViewBody extends StatefulWidget {
 
 class _OnBordingViewBodyState extends State<OnBordingViewBody> {
   PageController? pageController;
+
   @override
   void initState(){
+
     pageController=PageController(
      initialPage: 0 
     )..addListener(() {
@@ -89,6 +94,9 @@ class _OnBordingViewBodyState extends State<OnBordingViewBody> {
       ],
     );
   }
+
+
 }
+
 
 

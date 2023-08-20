@@ -28,7 +28,7 @@ class _sweetmarketState extends State<sweetmarket> {
     return GetMaterialApp(
       theme:ThemeData(fontFamily:'Poppins' ) ,
       debugShowCheckedModeBanner: false,
-      home:Login() ,
+      home:SplashView() ,
 
     );
   }
