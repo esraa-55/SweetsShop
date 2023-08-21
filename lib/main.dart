@@ -1,6 +1,4 @@
 import 'package:esraanewsweetmarket/layout_cubit/cubit.dart';
-import 'package:esraanewsweetmarket/login.dart';
-import 'package:esraanewsweetmarket/signup.dart';
 import 'package:esraanewsweetmarket/splash/splash_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +26,7 @@ class _sweetmarketState extends State<sweetmarket> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LayoutCubit()..getAllProducts(),
+      create: (context) => LayoutCubit(),
       child: GetMaterialApp(
         theme: ThemeData(fontFamily: 'Poppins'),
         debugShowCheckedModeBanner: false,

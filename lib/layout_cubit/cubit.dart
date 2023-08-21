@@ -1,9 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:esraanewsweetmarket/layout_cubit/state.dart';
 import 'package:esraanewsweetmarket/prodact/product_model.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc/bloc.dart';
+
+import '../about_page.dart';
+import '../aboutus_page.dart';
+import '../catigories_page.dart';
+import '../home_page.dart';
+import '../logout_page.dart';
 
 class LayoutCubit extends Cubit<LayoutState> {
   LayoutCubit() : super(LayoutInitState());
@@ -46,11 +52,28 @@ class LayoutCubit extends Cubit<LayoutState> {
   }
   void decrement(){
 
-    if (initialNumber<1){
+    if (initialNumber<=1){
       initialNumber =1;
     }else{
       initialNumber--;
     }
     emit(DecrementState());
   }
+
+  int currentIndex = 0;
+
+  void changeBottomNav(int index) {
+    currentIndex = index;
+    emit(ChatChangeBottomNavState());
+  }
+
+  List<Widget> screens=[
+    HomePage(),
+    CategoriesPage(),
+    AboutAppPage(),
+    AboutUsPage(),
+    LogoutPage(),
+  ];
+
+
 }

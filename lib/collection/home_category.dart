@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,7 +7,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
 import '../core/customs_buttons.dart';
-import '../prodact/main_page_cards.dart';
+import '../prodact/main_layout.dart';
 
 import 'models.dart';
 
@@ -26,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentPage = 0;
 
   @override
-  void initState() { getOnBordingData();
+  void initState() {
     // TODO: implement initState
     super.initState();
     _pageController =
@@ -73,15 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child:  CustomGeneralButton(
                 OnTap: (){
 
-                  if(_pageController!.page!<3){
-                    _pageController?.nextPage(duration:Duration(milliseconds: 500),
-                        curve:Curves.easeIn);
-                  }
-                  else{
+
                     Get.to(()=>Home(),transition:Transition.rightToLeft ,
                         duration: Duration(milliseconds:500 ));
 
-                  }
+
                 },
                 text:'Buy NOW',
               ),),
@@ -123,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(30),
                     image: DecorationImage(
                         image:AssetImage(
-                         data!.imageName!
+                         data.imageName!
                         ),
                         fit: BoxFit.fill),
                     boxShadow: const [
@@ -140,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Padding(
           padding: const EdgeInsets.only(top: 20),
           child: Text(
-            data!.title!,
+            data.title!,
             style: const TextStyle(
                 color: Color(0xFF7C101E),
                 fontSize: 25,
@@ -150,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            data!.subtitle!,
+            data.subtitle!,
             style: const TextStyle(
                 color: Colors.black45,
                 //color: Color(0xFFF6EFEF),
@@ -165,10 +160,5 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
-  getOnBordingData(){
-    FirebaseFirestore.instance.collection("onbording").doc().get().then((value) {
-      onBoardingData=DataModel.fromJson(value.data()!) ;
-    });
 
-  }
 }

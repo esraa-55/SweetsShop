@@ -1,8 +1,6 @@
 import 'package:esraanewsweetmarket/core/color_const.dart';
-import 'package:esraanewsweetmarket/core/customs_buttons.dart';
 import 'package:esraanewsweetmarket/layout_cubit/cubit.dart';
 import 'package:esraanewsweetmarket/layout_cubit/state.dart';
-import 'package:esraanewsweetmarket/prodact/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -136,41 +134,48 @@ class ProductDetails extends StatelessWidget {
           //     ),
           //   ),
           // ),
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                height: 250,
-                child: Image(
+          body: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
 
-                  fit: BoxFit.fitHeight,
-                  image: NetworkImage(image!),
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        title!,
-                        style: TextStyle(fontSize: 30,
-                            color: buttonColor,
-                            fontWeight: FontWeight.bold),
-                      ),
+
+                    child: Image(
+
+                      fit: BoxFit.contain,
+                      image: NetworkImage(image!),
                     ),
-                    Text(
-                      '$price \$',
-                      style: TextStyle(fontSize: 30),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            title!,
+                            style: TextStyle(fontSize: 30,
+                                color: buttonColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Text(
+                          '$price \$',
+                          style: TextStyle(fontSize: 30),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ]
+                ,
               ),
-            ]
-            ,
+            ),
           )
           ,
         );

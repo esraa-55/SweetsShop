@@ -9,3 +9,9 @@ class GetProductSuccessState extends LayoutState{}
 //counter
 class IncrementState extends LayoutState{}
 class DecrementState extends LayoutState{}
+
+
+//bottom nav state
+class ChatChangeBottomNavState extends LayoutState{}
+
+
