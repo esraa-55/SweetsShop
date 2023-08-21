@@ -43,8 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 40),
-        child: Column(
+        padding: const EdgeInsets.symmetric(vertical: 5),
+          child: Column(
           children: <Widget>[
             const Padding(
               padding: EdgeInsets.all(40.0),
@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: <Widget>[
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.fromLTRB(20, 5, 20, 20),
             child: Hero(
               tag: data.imageName!,
               child: Container(
@@ -133,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 10),
           child: Text(
             data.title!,
             style: const TextStyle(

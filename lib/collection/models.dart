@@ -31,8 +31,8 @@ class DataModel {
 }
 
 List<DataModel> dataList = [
-  DataModel("Pancake", "assets/istockphoto-696365602-612x612.jpg", "your favourite Pancake"),
-  DataModel("Birthday Cake", "assets/istockphoto-865586350-612x612.jpg", "your favourite Pancake"),
-  DataModel("Waffle", "assets/istockphoto-1266680562-612x612-removebg-preview.png", "your favourite Waffle "),
-  DataModel("Drinks", "assets/istockphoto-1417339843-612x612.jpg", "your favourite Drinks"),
+  DataModel("Pancake", "assets/pan1.jpeg", "your favourite Pancake"),
+  DataModel("Birthday Cake", "assets/cee.jpeg", "your favourite Pancake"),
+  DataModel("Waffle", "assets/caa.jpeg", "your favourite Waffle "),
+  DataModel("Drinks", "assets/ceee.jpg", "your favourite Drinks"),
 ];
