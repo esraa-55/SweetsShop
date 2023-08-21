@@ -9,7 +9,7 @@ import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
 import '../core/customs_buttons.dart';
 import '../prodact/main_page_cards.dart';
-import 'deteld_category.dart';
+
 import 'models.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -117,30 +117,22 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.all(20.0),
             child: Hero(
               tag: data.imageName!,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DetailsScreen(data: data)));
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
-                      image: DecorationImage(
-                          image:AssetImage(
-                           data!.imageName!
-                          ),
-                          fit: BoxFit.fill),
-                      boxShadow: const [
-                        BoxShadow(
-                          offset: Offset(0, 3),
-                          blurRadius: 4,
-                          //color: Colors.black26
-                          color: Color(0xFFAA4279), )
-                      ]),
-                ),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30),
+                    image: DecorationImage(
+                        image:AssetImage(
+                         data!.imageName!
+                        ),
+                        fit: BoxFit.fill),
+                    boxShadow: const [
+                      BoxShadow(
+                        offset: Offset(0, 3),
+                        blurRadius: 4,
+                        //color: Colors.black26
+                        color: Color(0xFFAA4279), )
+                    ]),
               ),
             ),
           ),

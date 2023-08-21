@@ -5,11 +5,11 @@ import 'package:esraanewsweetmarket/prodact/product_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import '../core/color_const.dart';
-import '../core/color_const.dart';
+
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -131,31 +131,47 @@ class Home extends StatelessWidget {
                                               ),
                                               padding: EdgeInsets.all(10),
                                               child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
-                                                  Image(
-                                                    image:
-                                                        NetworkImage(e.imageName!),
-                                                  ),
-                                                  SizedBox(height: 5,),
                                                   Row(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.start,
                                                     children: [
-                                                      Text(
-                                                        e.title!,
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 25),
+                                                      Container(
+
+                                                        child: Image(
+                                                          image:
+                                                              NetworkImage(e.imageName!),height: 100,width: 100,
+                                                        ),
+                                                        width: 100,
+                                                        height: 100,
                                                       ),
-                                                      Spacer(),
-                                                      Text(
-                                                        "${e.price!}\$",
-                                                        style: TextStyle(
-                                                            color: Colors.black,
-                                                            fontSize: 25),
+                                                      SizedBox(width: 10,),
+                                                      Expanded(
+                                                        child: Column(
+                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                          children: [
+                                                            Text(
+                                                              e.title!,maxLines: 2,overflow: TextOverflow.ellipsis,
+                                                              style: TextStyle(
+                                                                  color: Colors.black,
+                                                                  fontSize: 25,),
+                                                            ),
+                                                            SizedBox(height: 10,),
+                                                            Text(
+                                                              "${e.price!}\$",
+                                                              style: TextStyle(
+                                                                  color: Colors.black,
+                                                                  fontSize: 25),
+                                                            )
+                                                          ],
+                                                        ),
                                                       ),
+
                                                     ],
-                                                  )
+                                                  ),
+
+
                                                 ],
                                               ),
                                             ),
