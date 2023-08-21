@@ -67,6 +67,9 @@ class LayoutCubit extends Cubit<LayoutState> {
     emit(ChatChangeBottomNavState());
   }
 
+  List<String> appBarTitle=[
+    'Home','Categories','About App','About Us','Logout'
+  ];
   List<Widget> screens=[
     HomePage(),
     CategoriesPage(),

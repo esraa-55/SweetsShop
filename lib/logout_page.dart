@@ -11,6 +11,7 @@ class LogoutPage extends StatelessWidget {
     var cubit = LayoutCubit.get(context);
 
     return  Column(
+
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(

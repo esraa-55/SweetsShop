@@ -1,11 +1,9 @@
 import 'package:esraanewsweetmarket/layout_cubit/cubit.dart';
 import 'package:esraanewsweetmarket/layout_cubit/state.dart';
 import 'package:esraanewsweetmarket/prodact/product_model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-
 import '../core/color_const.dart';
 
 class Home extends StatelessWidget {
@@ -24,7 +22,7 @@ class Home extends StatelessWidget {
             elevation: 0.0,
             //titleSpacing: 20.0,
             title: Text(
-              'Buy Now',
+              cubit.appBarTitle[cubit.currentIndex],
               style: TextStyle(
                 color: buttonColor,
                 fontSize: 25,
