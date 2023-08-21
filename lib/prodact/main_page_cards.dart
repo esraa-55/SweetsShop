@@ -115,48 +115,51 @@ class Home extends StatelessWidget {
                                               return ProductDetails();
                                             }));
                               },
-                                  child: Container(
-                                            decoration: BoxDecoration(
-                                              boxShadow: const <BoxShadow>[
-                                                BoxShadow(
-                                                    color: Colors.black12,
-                                                    blurRadius: 20.0,
-                                                    offset: Offset(0.0, 0.75)),
-                                              ],
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Container(
+                                              decoration: BoxDecoration(
+                                                boxShadow: const <BoxShadow>[
+                                                  BoxShadow(
+                                                      color: Colors.black12,
+                                                      blurRadius: 20.0,
+                                                      offset: Offset(0.0, 0.75)),
+                                                ],
+                                                color: Colors.white,
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                              ),
+                                              padding: EdgeInsets.all(10),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Image(
+                                                    image:
+                                                        NetworkImage(e.imageName!),
+                                                  ),
+                                                  SizedBox(height: 5,),
+                                                  Row(
+                                                    children: [
+                                                      Text(
+                                                        e.title!,
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontSize: 25),
+                                                      ),
+                                                      Spacer(),
+                                                      Text(
+                                                        "${e.price!}\$",
+                                                        style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontSize: 25),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
                                             ),
-                                            padding: EdgeInsets.all(10),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Image(
-                                                  image:
-                                                      NetworkImage(e.imageName!),
-                                                ),
-                                                SizedBox(height: 5,),
-                                                Row(
-                                                  children: [
-                                                    Text(
-                                                      e.title!,
-                                                      style: TextStyle(
-                                                          color: Colors.black,
-                                                          fontSize: 25),
-                                                    ),
-                                                    Spacer(),
-                                                    Text(
-                                                      "${e.price!}\$",
-                                                      style: TextStyle(
-                                                          color: Colors.black,
-                                                          fontSize: 25),
-                                                    ),
-                                                  ],
-                                                )
-                                              ],
-                                            ),
-                                          ),
+                                  ),
                                 )
 
                                     //     Center(
