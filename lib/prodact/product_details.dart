@@ -119,10 +119,15 @@ class ProductDetails extends StatelessWidget {
       //   ),
       // ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image(
-            image: NetworkImage(image!),
+          Container(
+            height: 250,
+            child: Image(
+
+              fit: BoxFit.fitHeight,
+              image: NetworkImage(image!),
+            ),
           ),
           SizedBox(
             height: 5,
@@ -134,7 +139,7 @@ class ProductDetails extends StatelessWidget {
                 Expanded(
                   child: Text(
                     title!,
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(fontSize: 30,color: buttonColor,fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(
