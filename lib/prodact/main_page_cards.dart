@@ -112,7 +112,7 @@ class Home extends StatelessWidget {
                                             Navigator.push(context,
                                                 MaterialPageRoute(
                                                     builder: (context) {
-                                              return ProductDetails();
+                                              return ProductDetails(image: e.imageName,title: e.title,price: e.price,);
                                             }));
                                           },
                                           child: Padding(

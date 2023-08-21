@@ -1,15 +1,22 @@
 import 'package:esraanewsweetmarket/core/color_const.dart';
 import 'package:esraanewsweetmarket/core/customs_buttons.dart';
+import 'package:esraanewsweetmarket/prodact/product_model.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetails extends StatefulWidget {
-  const ProductDetails({super.key});
+class ProductDetails extends StatelessWidget {
 
-  @override
-  State<ProductDetails> createState() => _ProductDetailsState();
-}
+   String? title;
+   String? image;
+  String? price;
 
-class _ProductDetailsState extends State<ProductDetails> {
+  ProductDetails({
+    super.key,
+    required this.title,
+    required this.image,
+    required this.price,
+  });
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,7 +122,7 @@ class _ProductDetailsState extends State<ProductDetails> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image(
-            image: AssetImage('assets/istockphoto-182026106-612x612.jpg'),
+            image: NetworkImage(image!),
           ),
           SizedBox(
             height: 5,
@@ -126,19 +133,21 @@ class _ProductDetailsState extends State<ProductDetails> {
               children: [
                 Expanded(
                   child: Text(
-                    'Product Name',
+                    title!,
                     style: TextStyle(fontSize: 30),
                   ),
                 ),
                 Text(
-                  '\$10',
+                  '$price \$',
                   style: TextStyle(fontSize: 30),
                 ),
               ],
             ),
           ),
-        ],
-      ),
+        ]
+        ,
+      )
+      ,
     );
   }
 }
