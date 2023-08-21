@@ -37,4 +37,20 @@ class LayoutCubit extends Cubit<LayoutState> {
         snapshot) =>
         snapshot.docs.map((doc) => ProductModel.fromJson(doc.data())).toList());
   }
+
+
+  int initialNumber =1;
+  void increment(){
+    initialNumber++;
+    emit(IncrementState());
+  }
+  void decrement(){
+
+    if (initialNumber<1){
+      initialNumber =1;
+    }else{
+      initialNumber--;
+    }
+    emit(DecrementState());
+  }
 }

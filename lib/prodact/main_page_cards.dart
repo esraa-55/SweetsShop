@@ -109,6 +109,7 @@ class Home extends StatelessWidget {
                             children: products
                                 .map((e) => InkWell(
                                           onTap: () {
+                                            cubit.initialNumber=1;
                                             Navigator.push(context,
                                                 MaterialPageRoute(
                                                     builder: (context) {
