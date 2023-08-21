@@ -5,11 +5,11 @@ import 'package:esraanewsweetmarket/prodact/product_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 import '../core/color_const.dart';
-
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -108,22 +108,23 @@ class Home extends StatelessWidget {
                             shrinkWrap: true,
                             children: products
                                 .map((e) => InkWell(
-                              onTap: (){
-                                Navigator.push(context,
+                                          onTap: () {
+                                            Navigator.push(context,
                                                 MaterialPageRoute(
                                                     builder: (context) {
                                               return ProductDetails();
                                             }));
-                              },
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Container(
+                                          },
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: Container(
                                               decoration: BoxDecoration(
                                                 boxShadow: const <BoxShadow>[
                                                   BoxShadow(
                                                       color: Colors.black12,
                                                       blurRadius: 20.0,
-                                                      offset: Offset(0.0, 0.75)),
+                                                      offset:
+                                                          Offset(0.0, 0.75)),
                                                 ],
                                                 color: Colors.white,
                                                 borderRadius:
@@ -131,52 +132,86 @@ class Home extends StatelessWidget {
                                               ),
                                               padding: EdgeInsets.all(10),
                                               child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Row(
                                                     crossAxisAlignment:
-                                                        CrossAxisAlignment.start,
+                                                        CrossAxisAlignment
+                                                            .start,
                                                     children: [
                                                       Container(
-
                                                         child: Image(
-                                                          image:
-                                                              NetworkImage(e.imageName!),height: 100,width: 100,
+                                                          image: NetworkImage(
+                                                              e.imageName!),
+                                                          height: 100,
+                                                          width: 100,
                                                         ),
                                                         width: 100,
                                                         height: 100,
                                                       ),
-                                                      SizedBox(width: 10,),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
                                                       Expanded(
                                                         child: Column(
-                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
                                                           children: [
                                                             Text(
-                                                              e.title!,maxLines: 2,overflow: TextOverflow.ellipsis,
+                                                              e.title!,
+                                                              maxLines: 2,
+                                                              overflow:
+                                                                  TextOverflow
+                                                                      .ellipsis,
                                                               style: TextStyle(
-                                                                  color: Colors.black,
-                                                                  fontSize: 25,),
+                                                                  color:
+                                                                      buttonColor,
+                                                                  fontSize: 25,
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold),
+                                                            ),
+                                                            SizedBox(
+                                                              height: 10,
+                                                            ),
+                                                            Text(
+                                                              "price: ${e.price!}\$",
+                                                              style: TextStyle(
+                                                                  color: Colors
+                                                                      .black,
+                                                                  fontSize: 20),
                                                             ),
                                                             SizedBox(height: 10,),
-                                                            Text(
-                                                              "${e.price!}\$",
-                                                              style: TextStyle(
-                                                                  color: Colors.black,
-                                                                  fontSize: 25),
-                                                            )
+                                                            RatingBar.builder(
+                                                              initialRating: 4,
+                                                                itemCount: 5,
+                                                                minRating: 1,
+                                                                itemSize: 16,
+                                                                itemBuilder:
+                                                                    (context,
+                                                                            _) =>
+                                                                        Icon(
+                                                                          Icons
+                                                                              .star,
+                                                                          color:
+                                                                              Colors.amber,
+                                                                        ),
+                                                                onRatingUpdate:
+                                                                (context){})
                                                           ],
                                                         ),
                                                       ),
-
                                                     ],
                                                   ),
-
-
                                                 ],
                                               ),
                                             ),
-                                  ),
-                                )
+                                          ),
+                                        )
 
                                     //     Center(
                                     //   child: productCard(
