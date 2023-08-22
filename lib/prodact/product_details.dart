@@ -3,9 +3,9 @@ import 'package:esraanewsweetmarket/layout_cubit/cubit.dart';
 import 'package:esraanewsweetmarket/layout_cubit/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ProductDetails extends StatelessWidget {
-
   String? title;
   String? image;
   String? price;
@@ -17,21 +17,21 @@ class ProductDetails extends StatelessWidget {
     required this.price,
   });
 
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LayoutCubit, LayoutState>(
-      listener: (context, state) {
-
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         var cubit = LayoutCubit.get(context);
         return Scaffold(
           appBar: AppBar(
-            leading: IconButton(onPressed: (){
-              Navigator.pop(context);
-              cubit.initialNumber = 1;
-            },icon: Icon(Icons.arrow_back),),
+            leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+                cubit.initialNumber = 1;
+              },
+              icon: Icon(Icons.arrow_back),
+            ),
             title: Text("Product Details"),
             backgroundColor: buttonColor,
           ),
@@ -67,12 +67,50 @@ class ProductDetails extends StatelessWidget {
                   ),
                   width: 150,
                   height: 50,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text("Add To Cart"),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.transparent, elevation: 0),
+                  child: MaterialButton(
+                    onPressed: () {
+                      cubit.addToCart(
+                        title: title,
+                        imageName: image,
+                        price: price,
+                        number: cubit.initialNumber.toString(),
+                      );
+                      if (state is UploadToCartSuccessState) {
+                        showToast(
+                            message: "Added Successfully",
+                            toastColor: buttonColor,
+                            );
+                      }
+                    },
+                    child: state is UploadToCartLoadingState
+                        ? const SizedBox(
+                            width: 25,
+                            height: 25,
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                            ))
+                        : const Text(
+                            "Add To Cart",
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              color: Colors.white,
+                              fontSize: 18.0,
+                            ),
+                          ),
                   ),
+
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     cubit.addToCart(
+                  //         title: title,
+                  //         imageName: image,
+                  //         price: price,
+                  //         number: cubit.initialNumber.toString(),);
+                  //   },
+                  //   child: Text("Add To Cart"),
+                  //   style: ElevatedButton.styleFrom(
+                  //       backgroundColor: Colors.transparent, elevation: 0),
+                  // ),
                 ),
                 Spacer(),
                 Container(
@@ -91,8 +129,8 @@ class ProductDetails extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                Text(cubit.initialNumber<=1?'1':
-                  '${cubit.initialNumber}',
+                Text(
+                  cubit.initialNumber <= 1 ? '1' : '${cubit.initialNumber}',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
@@ -104,7 +142,6 @@ class ProductDetails extends StatelessWidget {
                   child: IconButton(
                     onPressed: () {
                       cubit.decrement();
-
                     },
                     icon: Icon(
                       Icons.remove,
@@ -142,10 +179,7 @@ class ProductDetails extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-
-
                     child: Image(
-
                       fit: BoxFit.contain,
                       image: NetworkImage(image!),
                     ),
@@ -160,7 +194,8 @@ class ProductDetails extends StatelessWidget {
                         Expanded(
                           child: Text(
                             title!,
-                            style: TextStyle(fontSize: 30,
+                            style: TextStyle(
+                                fontSize: 30,
                                 color: buttonColor,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -172,14 +207,28 @@ class ProductDetails extends StatelessWidget {
                       ],
                     ),
                   ),
-                ]
-                ,
+                ],
               ),
             ),
-          )
-          ,
+          ),
         );
       },
     );
   }
 }
+
+void showToast({
+  required String message,
+  required Color toastColor,
+  Color textColor = Colors.white,
+  double fontSize = 16.0,
+}) =>
+    Fluttertoast.showToast(
+      msg: message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIosWeb: 1,
+      backgroundColor: toastColor,
+      textColor: textColor,
+      fontSize: fontSize,
+    );

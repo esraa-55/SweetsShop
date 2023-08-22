@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:esraanewsweetmarket/cart/cart_model.dart';
 import 'package:esraanewsweetmarket/layout_cubit/state.dart';
 import 'package:esraanewsweetmarket/prodact/product_model.dart';
+import 'package:esraanewsweetmarket/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc/bloc.dart';
@@ -36,25 +38,24 @@ class LayoutCubit extends Cubit<LayoutState> {
     }).catchError((error) {});
   }
 
-
-
   Stream<List<ProductModel>> myProducts() {
-    return FirebaseFirestore.instance.collection('products').snapshots().map((
-        snapshot) =>
-        snapshot.docs.map((doc) => ProductModel.fromJson(doc.data())).toList());
+    return FirebaseFirestore.instance.collection('products').snapshots().map(
+        (snapshot) => snapshot.docs
+            .map((doc) => ProductModel.fromJson(doc.data()))
+            .toList());
   }
 
+  int initialNumber = 1;
 
-  int initialNumber =1;
-  void increment(){
+  void increment() {
     initialNumber++;
     emit(IncrementState());
   }
-  void decrement(){
 
-    if (initialNumber<=1){
-      initialNumber =1;
-    }else{
+  void decrement() {
+    if (initialNumber <= 1) {
+      initialNumber = 1;
+    } else {
       initialNumber--;
     }
     emit(DecrementState());
@@ -67,10 +68,14 @@ class LayoutCubit extends Cubit<LayoutState> {
     emit(ChatChangeBottomNavState());
   }
 
-  List<String> appBarTitle=[
-    'Home','Categories','About App','About Us','Logout'
+  List<String> appBarTitle = [
+    'Home',
+    'Categories',
+    'About App',
+    'About Us',
+    'Logout'
   ];
-  List<Widget> screens=[
+  List<Widget> screens = [
     HomePage(),
     CategoriesPage(),
     AboutAppPage(),
@@ -78,5 +83,44 @@ class LayoutCubit extends Cubit<LayoutState> {
     LogoutPage(),
   ];
 
+  addToCart({
+    required String? title,
+    required String? imageName,
+    required String? price,
+    required String? number,
+     String? productId,
+  }) {
+    CartModel model = CartModel(
+      title,
+      imageName,
+      price,
+      number,
+      productId,
+    );
+    emit(UploadToCartLoadingState());
+    FirebaseFirestore.instance
+        .collection('cart')
+        .add(model.toMap())
+        .then((value) {
+      FirebaseFirestore.instance
+          .collection('cart')
+          .doc(value.id)
+          .update({"productId": value.id});
+      emit(UploadToCartSuccessState());
+    }).catchError((error) {
+      emit(UploadToCartErrorState());
+    });
+  }
 
+  Stream<List<CartModel>> cart() {
+    return FirebaseFirestore.instance.collection('cart').snapshots().map(
+        (snapshot) => snapshot.docs
+            .map((doc) => CartModel.fromJson(doc.data()))
+            .toList());
+  }
+
+  // remover from cart
+  void removeFromCart({required String productId}) {
+    FirebaseFirestore.instance.collection('cart').doc(productId).delete();
+  }
 }

@@ -15,3 +15,17 @@ class DecrementState extends LayoutState{}
 class ChatChangeBottomNavState extends LayoutState{}
 
 
+//add to cart
+class UploadToCartLoadingState extends LayoutState{}
+class UploadToCartSuccessState extends LayoutState{}
+class UploadToCartErrorState extends LayoutState{}
+
+//remove from cart
+class RemoveFromCartLoadingState extends LayoutState{}
+class RemoveFromCartSuccessState extends LayoutState{}
+
+
+
+
+
+
