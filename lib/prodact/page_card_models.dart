@@ -16,6 +16,9 @@ class CardModel{
     subtitle=json["subtitle"];
     imageName= json["imageName"];
 
+
+
+    
   }
   Map<String,dynamic>toMap(){
     return {
