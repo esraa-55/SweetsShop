@@ -50,7 +50,7 @@ class _SplashBodyState extends State<SplashBody>with SingleTickerProviderStateMi
         children: [
           Spacer(),
           Opacity(
-            opacity: fadingAnimation?.value ?? 1.0,
+            opacity: fadingAnimation?.value ?? 1,
             child: Text(
               'Sweets Market',
               style: TextStyle(

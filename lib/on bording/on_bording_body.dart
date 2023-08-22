@@ -78,7 +78,7 @@ class _OnBordingViewBodyState extends State<OnBordingViewBody> {
           left: SizeConfig.defaultSize! * 10,
           right: SizeConfig.defaultSize! * 10,
           bottom: SizeConfig.defaultSize! *4,
-          child:  CustomGenralButton(
+          child:  CustomGeneralButton(
             OnTap: (){
               if(pageController!.page!<2){
                 pageController?.nextPage(duration:Duration(milliseconds: 500),
