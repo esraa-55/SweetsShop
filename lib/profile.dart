@@ -1,7 +1,4 @@
-
-
 // ignore_for_file: non_constant_identifier_names, unused_local_variable
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -10,15 +7,11 @@ import 'dart:io';
 
   class ProfilePage extends StatefulWidget {
 
-
-
-
   final String name;
   final String email;
   final String password;
   final String address;
 
- 
    ProfilePage({
     Key? key,
     required this.name,
@@ -32,8 +25,6 @@ import 'dart:io';
 }
 class _ProfilePageState extends State<ProfilePage> {
   File? _image;
-
-     
 
   @override
   Widget build(BuildContext context) {
@@ -95,10 +86,6 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
     );
   }
-
-
-
-  
 
   Container itemprofile(String title, String subtitle, IconData iconData) {
     return Container(
