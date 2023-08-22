@@ -1,7 +1,12 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, body_might_complete_normally_nullable
 
+
+
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:esraanewsweetmarket/profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 
 
 import 'login.dart';
@@ -19,6 +24,9 @@ class _SignUpState extends State<SignUp> {
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passcontroller = TextEditingController();
   TextEditingController confirmpasscontroller = TextEditingController();
+   TextEditingController namecontroller= TextEditingController();
+   TextEditingController addresscontroller= TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -60,9 +68,9 @@ class _SignUpState extends State<SignUp> {
                  
                   Padding(
                     padding: const EdgeInsets.all(15.0),
-                    child: SizedBox(
-                      width: 340,
+                 
                       child: TextFormField(
+                        controller: namecontroller,
                         decoration: InputDecoration(
                            filled: true,
                               hintText: "Name",
@@ -80,7 +88,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ),
                     ),
-                  ),
+                  
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
@@ -110,9 +118,9 @@ class _SignUpState extends State<SignUp> {
                   ),
                     Padding(
                     padding: const EdgeInsets.all(15.0),
-                    child: SizedBox(
-                      width: 340,
+                    
                       child: TextFormField(
+                        controller: addresscontroller,
                         decoration: InputDecoration(
                            filled: true,
                               hintText: "Address",
@@ -130,7 +138,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ),
                     ),
-                  ),
+                  
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
@@ -200,14 +208,25 @@ class _SignUpState extends State<SignUp> {
                           if (_formKey.currentState!.validate()) { 
                              bool result =  await register(emailcontroller.text,passcontroller.text);
                                 if(result==true){
+                            
+                                
                 
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(content: Text("Successful registration")));
                 
-                                Navigator.push(context,MaterialPageRoute(builder: (context){
-                                      return Login();
+                              
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>ProfilePage(name:namecontroller.text , email: emailcontroller.text, password: passcontroller.text ,address: addresscontroller.text)
+                                )
+                                );
+                              Navigator.push(
+                                              context,
+                                                 MaterialPageRoute(builder: (context) => Login()),
+                                                         );
+                                     
                                 
-                                      }));
+                                
+                                
+                                     
                 
                                 }
                                    else{
@@ -266,6 +285,7 @@ class _SignUpState extends State<SignUp> {
     );
 
      if(userCredential.user !=null){
+      
     return true;
      }
   }
