@@ -2,10 +2,14 @@
 
 // ignore_for_file: non_constant_identifier_names, unused_local_variable
 
+import 'package:esraanewsweetmarket/signup.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+
+import 'layout_cubit/cubit.dart';
+import 'on bording/on_bording_view.dart';
 
 
   class ProfilePage extends StatefulWidget {
@@ -37,6 +41,8 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
+     
+     var cubit = LayoutCubit.get(context);
     return Scaffold(
       body: Center(
         child: Padding(
@@ -76,7 +82,12 @@ class _ProfilePageState extends State<ProfilePage> {
               height: 70,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) {
+                          return OnBordingView();}));
+              },
               child: Text(
                 'LOG Out',
                 style: TextStyle(color: Colors.white),
