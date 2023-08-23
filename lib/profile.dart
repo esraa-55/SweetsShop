@@ -32,61 +32,45 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Column(children: [
-            SizedBox(
-              height: 70,
-            ),
-            Row(
-              children: <Widget>[
-                CircleAvatar(
-                  radius: 70,
-                  backgroundImage: _image==null?null:FileImage(_image!),
-                ),
-                GestureDetector(
-                  onTap :   captureImageFromCamera,
-                  child: Icon(Icons.camera_alt_outlined),
-                )
-                
-      
-              ],
-            ),
-      
-            SizedBox(
-              height: 40,
-            ),
-            itemprofile("Name",widget. name, CupertinoIcons.person),
-            SizedBox(
-              height: 20,
-            ),
-            itemprofile("Email",widget. email, CupertinoIcons.mail),
-            SizedBox(
-              height: 20,
-            ),
-            itemprofile("Address", widget.address, CupertinoIcons.location_solid),
-            SizedBox(
-              height: 70,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'LOG Out',
-                style: TextStyle(color: Colors.white),
+    return  Center(
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(children: [
+          SizedBox(
+            height: 70,
+          ),
+          Row(
+            children: <Widget>[
+              CircleAvatar(
+                radius: 70,
+                backgroundImage: _image==null?null:FileImage(_image!),
               ),
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(Color.fromARGB(255, 236, 101, 169)),
-                padding: MaterialStateProperty.all(
-                    EdgeInsets.symmetric(horizontal: 79, vertical: 15)),
-                shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(27))),
-              ),
-            )
-          ]),
-        ),
+              GestureDetector(
+                onTap :   captureImageFromCamera,
+                child: Icon(Icons.camera_alt_outlined),
+              )
+
+
+            ],
+          ),
+
+          SizedBox(
+            height: 40,
+          ),
+          itemprofile("Name",widget. name, CupertinoIcons.person),
+          SizedBox(
+            height: 20,
+          ),
+          itemprofile("Email",widget. email, CupertinoIcons.mail),
+          SizedBox(
+            height: 20,
+          ),
+          itemprofile("Address", widget.address, CupertinoIcons.location_solid),
+          SizedBox(
+            height: 70,
+          ),
+         
+        ]),
       ),
     );
   }
