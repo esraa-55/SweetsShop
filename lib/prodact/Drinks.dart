@@ -15,7 +15,7 @@ class _DrinksState extends State<Drinks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ice Cream'),
+        title: Text('Drinks'),
         backgroundColor: buttonColor,
         centerTitle: true,
       ),

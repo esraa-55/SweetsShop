@@ -15,7 +15,7 @@ class _pancakeState extends State<pancake> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ice Cream'),
+        title: Text('Panecake'),
         backgroundColor: buttonColor,
         centerTitle: true,
       ),
