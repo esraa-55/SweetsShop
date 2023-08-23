@@ -18,7 +18,7 @@ class CardModel{
 
 
 
-    
+
   }
   Map<String,dynamic>toMap(){
     return {
