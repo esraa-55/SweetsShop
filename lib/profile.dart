@@ -1,8 +1,5 @@
-
-
 // ignore_for_file: non_constant_identifier_names, unused_local_variable
 
-import 'package:esraanewsweetmarket/signup.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -14,15 +11,11 @@ import 'on bording/on_bording_view.dart';
 
   class ProfilePage extends StatefulWidget {
 
-
-
-
   final String name;
   final String email;
   final String password;
   final String address;
 
- 
    ProfilePage({
     Key? key,
     required this.name,
@@ -37,12 +30,8 @@ import 'on bording/on_bording_view.dart';
 class _ProfilePageState extends State<ProfilePage> {
   File? _image;
 
-     
-
   @override
   Widget build(BuildContext context) {
-     
-     var cubit = LayoutCubit.get(context);
     return Scaffold(
       body: Center(
         child: Padding(
@@ -82,12 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
               height: 70,
             ),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(
-                        builder: (context) {
-                          return OnBordingView();}));
-              },
+              onPressed: () {},
               child: Text(
                 'LOG Out',
                 style: TextStyle(color: Colors.white),
@@ -106,10 +90,6 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
     );
   }
-
-
-
-  
 
   Container itemprofile(String title, String subtitle, IconData iconData) {
     return Container(

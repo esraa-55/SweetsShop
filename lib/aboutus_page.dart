@@ -43,6 +43,8 @@ class AboutUsPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
+
+
                     width: 120,
                     height: 120,
                     child: Column(
