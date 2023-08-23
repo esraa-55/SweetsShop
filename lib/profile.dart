@@ -1,8 +1,12 @@
 // ignore_for_file: non_constant_identifier_names, unused_local_variable
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+
+import 'layout_cubit/cubit.dart';
+import 'on bording/on_bording_view.dart';
 
 
   class ProfilePage extends StatefulWidget {
@@ -28,7 +32,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return  Center(
       child: Padding(
         padding: EdgeInsets.all(20),
         child: Column(children: [
@@ -65,21 +69,7 @@ class _ProfilePageState extends State<ProfilePage> {
           SizedBox(
             height: 70,
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text(
-              'LOG Out',
-              style: TextStyle(color: Colors.white),
-            ),
-            style: ButtonStyle(
-              backgroundColor:
-              MaterialStateProperty.all(Color.fromARGB(255, 236, 101, 169)),
-              padding: MaterialStateProperty.all(
-                  EdgeInsets.symmetric(horizontal: 79, vertical: 15)),
-              shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(27))),
-            ),
-          )
+         
         ]),
       ),
     );
