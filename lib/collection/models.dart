@@ -32,7 +32,7 @@ class DataModel {
 
 List<DataModel> dataList = [
   DataModel("Pancake", "assets/pan1.jpeg", "your favourite Pancake"),
-  DataModel("Birthday Cake", "assets/cee.jpeg", "your favourite Pancake"),
+  DataModel("Birthday Cake", "assets/cee.jpeg", "your favourite Cake"),
   DataModel("Waffle", "assets/caa.jpeg", "your favourite Waffle "),
   DataModel("Drinks", "assets/ceee.jpg", "your favourite Drinks"),
 ];

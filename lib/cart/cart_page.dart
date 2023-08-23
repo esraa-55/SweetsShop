@@ -102,64 +102,66 @@ class CartPage extends StatelessWidget {
               ],
             ),
           ),
-          body: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              children: [
-                StreamBuilder<List<CartModel>>(
-                  stream: cubit.cart(),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasError) {
-                      return Text('Error No Data found! ${snapshot.error}');
-                    } else if (snapshot.hasData) {
-                      final products = snapshot.data!.reversed;
-                      double totalPrice = 0.0; // Initialize the total price
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                children: [
+                  StreamBuilder<List<CartModel>>(
+                    stream: cubit.cart(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) {
+                        return Text('Error No Data found! ${snapshot.error}');
+                      } else if (snapshot.hasData) {
+                        final products = snapshot.data!.reversed;
+                        double totalPrice = 0.0; // Initialize the total price
 
-                      products.forEach((e) {
-                        totalPrice += int.parse(e.price!) * int.parse(e.number!); // Calculate the total price
-                      });
+                        products.forEach((e) {
+                          totalPrice += int.parse(e.price!) * int.parse(e.number!); // Calculate the total price
+                        });
 
-                      return Column(
-                        children: [
-                          ListView(
-                            physics: NeverScrollableScrollPhysics(),
-                            shrinkWrap: true,
-                            children: products.map((e) {
-                              return state is RemoveFromCartLoadingState
-                                  ? const SizedBox(
-                                  width: 25,
-                                  height: 25,
-                                  child: CircularProgressIndicator(
-                                    color: Colors.white,
-                                  ))
-                                  : CartCard(
-                                  title: e.title!,
-                                  imageName: e.imageName!,
-                                  price: e.price!,
-                                  number: e.number!,
-                                  context: context,
-                                  onTap: () {
-                                    cubit.removeFromCart(productId: e.productId!);
-                                  });
-                            }).toList(),
-                          ),
-                          SizedBox(height: 20,),
-                          Text('Total Price: \$${totalPrice.toStringAsFixed(2)}',style: TextStyle(
-                    color: buttonColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25),), // Display total price
-                        ],
-                      );
-                    } else {
-                      return Center(
-                          child: CircularProgressIndicator(
-                            color: buttonColor,
-                          ));
-                    }
-                  },
-                ),
+                        return Column(
+                          children: [
+                            ListView(
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              children: products.map((e) {
+                                return state is RemoveFromCartLoadingState
+                                    ? const SizedBox(
+                                    width: 25,
+                                    height: 25,
+                                    child: CircularProgressIndicator(
+                                      color: Colors.white,
+                                    ))
+                                    : CartCard(
+                                    title: e.title!,
+                                    imageName: e.imageName!,
+                                    price: e.price!,
+                                    number: e.number!,
+                                    context: context,
+                                    onTap: () {
+                                      cubit.removeFromCart(productId: e.productId!);
+                                    });
+                              }).toList(),
+                            ),
+                            SizedBox(height: 20,),
+                            Text('Total Price: \$${totalPrice.toStringAsFixed(2)}',style: TextStyle(
+                      color: buttonColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25),), // Display total price
+                          ],
+                        );
+                      } else {
+                        return Center(
+                            child: CircularProgressIndicator(
+                              color: buttonColor,
+                            ));
+                      }
+                    },
+                  ),
 
-              ],
+                ],
+              ),
             ),
           ),
         );
