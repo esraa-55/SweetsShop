@@ -75,12 +75,12 @@ class ProductDetails extends StatelessWidget {
                         price: price,
                         number: cubit.initialNumber.toString(),
                       );
-                      if (state is UploadToCartSuccessState) {
+
                         showToast(
                             message: "Added Successfully",
                             toastColor: buttonColor,
                             );
-                      }
+
                     },
                     child: state is UploadToCartLoadingState
                         ? const SizedBox(

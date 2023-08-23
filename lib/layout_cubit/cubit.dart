@@ -73,14 +73,15 @@ class LayoutCubit extends Cubit<LayoutState> {
     'Categories',
     'About App',
     'About Us',
-    'Logout'
+    'Profile'
   ];
   List<Widget> screens = [
     HomePage(),
     CategoriesPage(),
     AboutAppPage(),
     AboutUsPage(),
-    LogoutPage(),
+    // LogoutPage(),
+    ProfilePage(name: 'ahmed', email: 'ahmed@gmail.com', password: 'password', address: 'address')
   ];
 
   addToCart({

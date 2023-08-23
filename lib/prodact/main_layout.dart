@@ -6,9 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import '../cart/cart_page.dart';
 import '../core/color_const.dart';
+import '../drawer/my_drawer.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +20,8 @@ class Home extends StatelessWidget {
       builder: (context, state) {
         var cubit = LayoutCubit.get(context);
         return Scaffold(
+          key: scaffoldKey,
+          drawer: MyDrawer(),
           backgroundColor: Color(0xFFF5F5F3),
           appBar: AppBar(
             backgroundColor: Colors.white,
@@ -30,14 +35,12 @@ class Home extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            leading: IconButton(onPressed: (){
+              scaffoldKey.currentState!.openDrawer();
+            }, icon: Icon(Icons.menu),color: buttonColor,),
+
             centerTitle: true,
-            leading: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.menu,
-                  size: 22.0,
-                  color: buttonColor,
-                )),
+
             actions: [
               CircleAvatar(
                 backgroundColor: buttonColor,
@@ -89,8 +92,8 @@ class Home extends StatelessWidget {
                     text: 'About Us',
                   ),
                   GButton(
-                    icon: Icons.login_outlined,
-                    text: 'Log Out',
+                    icon: Icons.person,
+                    text: 'Profile',
                   ),
                 ],
               ),
