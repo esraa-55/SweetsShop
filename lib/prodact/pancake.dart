@@ -21,601 +21,660 @@ class _pancakeState extends State<pancake> {
       ),
       body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
 //  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Potato pancakes",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
                           ),
-                          child: Column(
+                          Image.asset("assets/Potato pancakes.jpeg",
+                              width: 200, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
+                            children: [
                               Text(
-                                "Biscuit ice cream ",
+                                'price:',
                                 style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: buttonColor),
                               ),
-                              Image.asset("assets/pexels-photo-919273.webp",
-                                  width: 200, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('80\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
                               Text(
-                                "Max ice cream ",
+                                '80\$',
                                 style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-1146758.webp",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('60\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
+                                    color: Colors.black),
                               ),
                             ],
-                          )),
-                    ),
-                  ],
+                          ),
+                        ],
+                      )),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Strawberry Ice Cream ",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-1309583.webp",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('50\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Ice Cream blueberry ",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-1352281.webp",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('45\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                  ],
+                SizedBox(
+                  width: 30,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
 //  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "crepes pancakes",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
                           ),
-                          child: Column(
+                          Image.asset("assets/Crepes.jpg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
+                            children: [
                               Text(
-                                "Ice Cream Urine ",
+                                'price:',
                                 style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     color: buttonColor),
                               ),
-                              Image.asset("assets/pexels-photo-1683546.jpeg",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('60\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
                               Text(
-                                "Ice Cream Bascot ",
+                                '60\$',
                                 style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-1707920.webp",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('60\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
+                                    color: Colors.black),
                               ),
                             ],
-                          )),
-                    ),
-                  ],
+                          ),
+                        ],
+                      )),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Ice Cream Fruits ",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-3151754.jpeg",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('50\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Ice Cream Max ",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-3670538.webp",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('60\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Ice Cream chocolate ",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-5061022.jpeg",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('70\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Ice Cream Vanala ",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-5946663.webp",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('80\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Ice Cream Avjado ",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-7110180.webp",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('100\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("ff");
-                      },
-                      child: Container(
-                          height: 200,
-                          width: 180,
-                          margin: EdgeInsets.only(top: 20),
-//  margin: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Color(0xffE1EBE5),
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                "Ice Cream Frappuccino ",
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: buttonColor),
-                              ),
-                              Image.asset("assets/pexels-photo-7346520.webp",
-                                  width: 160, height: 100),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text('price:' ,
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: buttonColor),),
-                                  Text('70\$' ,style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black),),
-                                ],
-                              ),
-                            ],
-                          )),
-                    ),
-                  ],
-                ),
-
               ],
             ),
-          )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Blini",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Blini.jpeg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '50\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Dosa",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Dosa.jpg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '45\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Okonomiyaki",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Okonomiyaki.jpeg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '60\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Bing",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Bing.jpeg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '60\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Crempog",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Crempog3.jpg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '50\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Bannock ",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Bannock .jpeg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '60\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Egg waffle",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Egg waffle.webp",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '70\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Galette",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Galette.jpeg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '80\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Boxty",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Boxty.jpeg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '100\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+                SizedBox(
+                  width: 30,
+                ),
+                InkWell(
+                  onTap: () {
+                    print("ff");
+                  },
+                  child: Container(
+                      height: 200,
+                      width: 180,
+                      margin: EdgeInsets.only(top: 20),
+//  margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Color(0xffE1EBE5),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Cong you bing",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: buttonColor),
+                          ),
+                          Image.asset("assets/Cong you bing.jpeg",
+                              width: 160, height: 100),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'price:',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: buttonColor),
+                              ),
+                              Text(
+                                '70\$',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )),
+                ),
+              ],
+            ),
+          ],
+        ),
+      )),
     );
   }
 }
