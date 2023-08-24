@@ -78,6 +78,8 @@ class LayoutCubit extends Cubit<LayoutState> {
   List<Widget> screens = [
 
 
+
+
     
     HomePage(),
     CategoriesPage(),
