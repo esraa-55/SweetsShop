@@ -80,7 +80,7 @@ class LayoutCubit extends Cubit<LayoutState> {
 
 
 
-    
+
     HomePage(),
     CategoriesPage(),
     AboutAppPage(),
