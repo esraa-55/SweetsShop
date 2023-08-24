@@ -81,7 +81,7 @@ class LayoutCubit extends Cubit<LayoutState> {
     AboutAppPage(),
     AboutUsPage(),
     // LogoutPage(),
-    ProfilePage(name: 'ahmed', email: 'ahmed@gmail.com', password: 'password', address: 'address')
+    ProfilePage(name: 'Esraa', email: 'esraaalaa@gmail.com', password: 'password', address: 'alex')
   ];
 
   addToCart({
