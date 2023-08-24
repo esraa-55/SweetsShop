@@ -76,6 +76,9 @@ class LayoutCubit extends Cubit<LayoutState> {
     'Profile'
   ];
   List<Widget> screens = [
+
+
+    
     HomePage(),
     CategoriesPage(),
     AboutAppPage(),
